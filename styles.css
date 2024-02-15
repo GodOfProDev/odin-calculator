@@ -7,7 +7,7 @@
     padding: 0;
 }
 
-body button {
+body button, body p {
     font-family: Arial, sans-serif;
     font-size: 2rem;
 }
@@ -53,6 +53,13 @@ body button {
     height: 100px;
 
     margin: 15px 25px;
+
+    overflow: hidden;
+}
+
+.display-text {
+    margin: 0 25px;
+    overflow: hidden;
 }
 
 .operations {

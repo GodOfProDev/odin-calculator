@@ -1,0 +1,88 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body button {
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.flex-row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-end {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.calculator {
+    background-color: orange;
+
+    width: 500px;
+    height: 650px;
+
+    margin-top: 35px;
+}
+
+.display {
+    background-color: red;
+
+    width: 450px;
+    height: 100px;
+
+    margin: 15px 25px;
+}
+
+.operations {
+    background-color: yellow;
+
+    width: 125px;
+    height: 500px;
+
+    margin: 0 25px;
+}
+
+.numpad-container {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: end;
+    align-items: end;
+
+    width: 300px;
+    height: 500px;
+}
+
+.numpad {
+    background-color: aqua;
+
+    width: 300px;
+    height: 400px;
+}
+
+.num-btn {
+    width: 100px;
+    height: 100px;
+}
+
+.zero-btn {
+    width: 200px;
+    height: 100px;
+}
+
+.decimal-btn {
+    font-weight: bolder;
+}

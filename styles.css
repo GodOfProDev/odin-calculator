@@ -33,6 +33,10 @@ body button {
     flex-direction: column;
 }
 
+.padding-right-25 {
+    padding-right: 25px;
+}
+
 .calculator {
     background-color: orange;
 

@@ -8,7 +8,8 @@
 }
 
 body button, body p {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", sans-serif;
+    font-weight: bold;
     font-size: 2rem;
 }
 
@@ -58,6 +59,7 @@ body button, body p {
 }
 
 .display-text {
+    font-size: 3rem;
     margin: 0 25px;
     overflow: hidden;
 }

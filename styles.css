@@ -60,7 +60,7 @@ body button {
     margin: 0 25px;
 }
 
-.numpad-container {
+.main-container {
     display: flex;
     flex-direction: column;
 
@@ -78,7 +78,7 @@ body button {
     height: 400px;
 }
 
-.num-btn, .operation-btn {
+.num-btn, .operation-btn, .util-btn {
     width: 100px;
     height: 100px;
 }

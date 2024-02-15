@@ -28,6 +28,11 @@ body button {
     display: flex;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .calculator {
     background-color: orange;
 
@@ -49,7 +54,7 @@ body button {
 .operations {
     background-color: yellow;
 
-    width: 125px;
+    width: 100px;
     height: 500px;
 
     margin: 0 25px;
@@ -73,7 +78,7 @@ body button {
     height: 400px;
 }
 
-.num-btn {
+.num-btn, .operation-btn {
     width: 100px;
     height: 100px;
 }

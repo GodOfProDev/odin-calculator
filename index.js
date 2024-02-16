@@ -65,6 +65,10 @@ clearBtn.addEventListener("click", () => {
 })
 
 changeSignBtn.addEventListener("click", () => {
+    if (displayValue.includes("-") || displayElement.textContent === "0") {
+        return;
+    }
+
     addValueToTheStartOfTheDisplay("-")
 
     if (!isFirstNumberEntered) {
@@ -98,7 +102,6 @@ numpadContainer.addEventListener("click", (e) => {
 operationsContainer.addEventListener("click", (e) => {
     const targetClassList = e.target.classList
 
-
     if (targetClassList.contains("divide-btn")) {
         operator = "/"
     } else if (targetClassList.contains("multiply-btn")) {
@@ -109,12 +112,12 @@ operationsContainer.addEventListener("click", (e) => {
         operator = "+"
     } else if (targetClassList.contains("equals-btn")) {
        if (isFirstNumberEntered && isEnteringSecondNumber) {
-           console.log(firstNumber, secondNumber)
            const result = operate(firstNumber, secondNumber, operator)
 
            setDisplay(result)
 
            firstNumber = result
+           secondNumber = 0;
 
            isEnteringSecondNumber = false;
        }
@@ -166,6 +169,12 @@ function removeValueFromTheDisplay() {
 
     if (displayValue.length === 0) {
         displayValue = "0"
+    }
+
+    if (!isFirstNumberEntered || !isEnteringSecondNumber) {
+        firstNumber = parseDisplayToNumber()
+    } else {
+        secondNumber = parseDisplayToNumber()
     }
 
     updateDisplay()

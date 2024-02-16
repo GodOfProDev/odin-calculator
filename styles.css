@@ -91,7 +91,7 @@ body button, body p {
     height: 400px;
 }
 
-.num-btn, .operation-btn, .util-btn {
+.num-btn, .operation-btn, .util-btn, .decimal-btn {
     width: 100px;
     height: 100px;
 }

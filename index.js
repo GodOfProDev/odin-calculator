@@ -32,7 +32,7 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a / b;
+    return Math.round((a / b) * 10) / 10;
 }
 
 const displayElement = document.querySelector(".display-text")
@@ -41,6 +41,7 @@ const backspaceBtn = document.querySelector(".backspace-btn")
 const operationsContainer = document.querySelector(".operations")
 const clearBtn = document.querySelector(".clear-btn")
 const changeSignBtn = document.querySelector(".change-sign-btn")
+const decimalBtn = document.querySelector(".decimal-btn")
 
 let displayValue = ""
 
@@ -52,6 +53,12 @@ let isFirstNumberEntered = false;
 let isSecondNumberEntered = false
 
 let isEnteringSecondNumber = false;
+
+decimalBtn.addEventListener("click", () => {
+    if (!displayValue.includes(".")) {
+        addValueToTheDisplay(".")
+    }
+})
 
 clearBtn.addEventListener("click", () => {
     clearCalculator();
@@ -71,7 +78,7 @@ numpadContainer.addEventListener("click", (e) => {
     const target = e.target
 
     if (target.classList.contains("num-btn")) {
-        const value = parseInt(e.target.textContent)
+        const value = parseFloat(e.target.textContent)
 
         if (isFirstNumberEntered && !isEnteringSecondNumber) {
             setDisplay(value)
@@ -121,7 +128,7 @@ backspaceBtn.addEventListener("click", () => {
 })
 
 function parseDisplayToNumber() {
-    return parseInt(displayValue)
+    return parseFloat(displayValue)
 }
 
 function setDisplay(num) {
@@ -131,7 +138,7 @@ function setDisplay(num) {
 }
 
 function addValueToTheDisplay(num) {
-    if (displayValue === "0") {
+    if (displayValue === "0" && num !== ".") {
         displayValue = ""
     }
 
@@ -165,6 +172,12 @@ function removeValueFromTheDisplay() {
 }
 
 function updateDisplay() {
+    if (displayValue.length >= 14) {
+        displayElement.textContent = parseFloat(displayValue).toExponential(5);
+
+        return;
+    }
+
     displayElement.textContent = displayValue
 }
 
